@@ -13,6 +13,11 @@ public class Server {
 
                 Socket client = serverSocket.accept(); // client object receive incoming requests
                 System.out.println("Connected! " + client.getInetAddress().getHostAddress());
+
+                ClientHandler clientHandler = new ClientHandler(client); // new thread object for client
+
+                new Thread(clientHandler).start(); // start thread
+
             }
 
         } catch (IOException e) {
@@ -30,4 +35,12 @@ public class Server {
             }
         }
     }
+
+    private record ClientHandler(Socket clientSocket) implements Runnable {
+
+        public void run() {
+
+            }
+        }
+
 }
