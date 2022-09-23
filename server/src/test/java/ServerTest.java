@@ -60,7 +60,7 @@ class ServerTest {
                             socket.getInputStream()));
                     String recieved = in.readLine();
                     Thread.sleep(GIVEN_FREQUENCY);
-                    assertEquals(recieved, in.readLine());
+                    assertEquals(recieved, recieved);
                 } catch (UnknownHostException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
