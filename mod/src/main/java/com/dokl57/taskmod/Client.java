@@ -1,6 +1,6 @@
 package com.dokl57.taskmod;
 
-import com.dokl57.taskmod.config.Globals;
+import com.mojang.logging.LogUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,17 +12,17 @@ public class Client {
     public static void start()
     {
 
-        try (Socket socket = new Socket(Globals.SERVER_HOST, Globals.SERVER_PORT)) {
+        try (Socket socket = new Socket("localhost", 4001)) {
             BufferedReader in
                     = new BufferedReader(new InputStreamReader(
                     socket.getInputStream()));
             while (true) {
                 if(in.readLine()!="") {
-                    System.out.println("Server replied: " + in.readLine());
+                    LogUtils.getLogger().info("Server replied: " + in.readLine());
                 }
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
 
