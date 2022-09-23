@@ -19,6 +19,6 @@ public class Globals {
         }
     }
 
-    public static final int SERVER_PORT = Integer.valueOf(properties.getProperty("port"));
+    public static final int SERVER_PORT = Integer.valueOf(properties.getProperty("server.port"));
     public static final int SENDING_FREQUENCY = Integer.valueOf(properties.getProperty("seconds"));
 }

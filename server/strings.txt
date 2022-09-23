@@ -1,0 +1,10 @@
+testline
+hello
+world
+end
+of
+the
+day
+but I can't
+scream anymore
+and so on
