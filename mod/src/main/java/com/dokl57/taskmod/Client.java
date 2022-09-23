@@ -14,6 +14,7 @@ import java.net.Socket;
 public class Client {
     public static void start()
     {
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -23,9 +24,10 @@ public class Client {
                             socket.getInputStream()));
                     while (true) {
                         if(in.readLine()!="") {
-                            LogUtils.getLogger().info("Server replied: " + in.readLine());
+                            String reply = in.readLine();
+                            LogUtils.getLogger().info("Server replied: " + reply);
                             if(Minecraft.getInstance().player!=null){
-                                Minecraft.getInstance().player.displayClientMessage(Component.literal(in.readLine()), true);
+                                Minecraft.getInstance().player.sendSystemMessage(Component.literal(reply));
                             }
                         }
                     }
