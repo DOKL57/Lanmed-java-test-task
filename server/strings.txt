@@ -1,7 +1,7 @@
 my testline - one
 my testline - two
 my testline - three
-display something doesn't hard
+display something seems doesn't hard
 and I don't know what to print else
 Now we have six rows
 Is it enough?
